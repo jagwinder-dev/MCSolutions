@@ -8,6 +8,13 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
    every page shares one source of truth without a build step.
    --------------------------------------------------------------------- */
 async function includePartials() {
+  // Site pages are one level deep at most (e.g. /services/servicePhp.html),
+  // so "../" for a service page and "" for everything else is all the site
+  // ever needs. Computed from the URL rather than hardcoded so the site
+  // works unmodified whether it's served at a domain root, under a GitHub
+  // Pages project subpath, or from a subfolder anywhere else.
+  const root = /\/services\//.test(window.location.pathname) ? '../' : '';
+
   const slots = document.querySelectorAll('[data-include]');
   await Promise.all(
     Array.from(slots).map(async (slot) => {
@@ -15,7 +22,8 @@ async function includePartials() {
       try {
         const res = await fetch(url);
         if (!res.ok) throw new Error(`Failed to load ${url}`);
-        slot.innerHTML = await res.text();
+        const html = (await res.text()).replace(/\{\{ROOT\}\}/g, root);
+        slot.innerHTML = html;
       } catch (err) {
         console.error(err);
       }

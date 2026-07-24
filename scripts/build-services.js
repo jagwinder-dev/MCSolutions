@@ -51,14 +51,14 @@ function render(entry) {
   <meta name="twitter:title" content="${escapeHtml(title)}">
   <meta name="twitter:description" content="${escapeHtml(description)}">
   <meta name="twitter:image" content="/assets/images/og-cover.png">
-  <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/assets/css/tokens.css">
-  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/main.css">
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <header class="site-header" data-include="/partials/header.html"></header>
+  <header class="site-header" data-include="../partials/header.html"></header>
 
   <main id="main-content">
 
@@ -114,15 +114,15 @@ function render(entry) {
     <section class="cta-band">
       <div class="container">
         <h2 class="reveal">Ready to start your ${escapeHtml(d.name)} project?</h2>
-        <a href="/contact.html" class="btn-outline on-inverted reveal">Request a Quote</a>
+        <a href="../contact.html" class="btn-outline on-inverted reveal">Request a Quote</a>
       </div>
     </section>
 
   </main>
 
-  <footer class="site-footer" data-include="/partials/footer.html"></footer>
+  <footer class="site-footer" data-include="../partials/footer.html"></footer>
 
-  <script src="/assets/js/main.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
 </body>
 </html>
 `;
