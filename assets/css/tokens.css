@@ -1,0 +1,100 @@
+/* ==========================================================================
+   Design tokens — Maverick Consulting Solutions
+   Editorial black-on-white system in the STARTO style, approved 2026-07-24:
+   near-black ink, white paper, a restrained grey scale, and ONE accent —
+   Maverick Graphite — used only on interactive/emphasis elements so the
+   site still reads as bold black-and-white first.
+   ========================================================================== */
+
+@font-face {
+  font-family: 'Archivo Black';
+  src: url('/assets/fonts/ArchivoBlack.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('/assets/fonts/Inter-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('/assets/fonts/Inter-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('/assets/fonts/Inter-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* --- Core palette --- */
+  --color-paper: #ffffff;
+  --color-ink: #0a0a0a;             /* headlines, primary text, borders-on-dark */
+  --color-grey-mid: #6b6b72;        /* secondary/body-muted text — 5.4:1 on white */
+  --color-grey-soft: #9a9aa1;       /* tertiary text, numerals, placeholders — decorative only */
+  --color-hairline: #e2e2e6;        /* decorative dividers — NOT for interactive boundaries */
+  --color-hairline-strong: #c9c9cf; /* input borders, tab boundaries (WCAG 1.4.11, ~3:1) */
+  --color-surface-alt: #f6f6f7;     /* section backgrounds, card hover wash */
+  --color-surface-inverted: #0a0a0a;/* inverted bands (process, footer) */
+  --color-on-inverted: #ffffff;
+  --color-on-inverted-muted: #a7a7ad;
+
+  /* --- Accent: Maverick Graphite — a deliberate dark-grey step, distinct
+         from --color-ink, used only for interactive/emphasis elements
+         (links, button hovers, active states, periods, eyebrow rules) --- */
+  --color-accent: #35343a;
+  --color-accent-bright: #56555c;   /* decorative-only: larger fills/icons */
+  --color-accent-tint: #ececec;     /* wash for hover backgrounds */
+
+  /* --- Feedback (semantic, kept separate from the brand accent) --- */
+  --color-success: #1b7a49;
+  --color-error: #c62839;
+
+  /* --- Fonts --- */
+  --font-display: 'Archivo Black', 'Arial Black', Arial, sans-serif;
+  --font-body: 'Inter', -apple-system, 'Segoe UI', sans-serif;
+
+  /* --- Type scale (fluid, mobile-first via clamp) --- */
+  --fs-display-xl: clamp(2.75rem, 2.1rem + 3.4vw, 6.5rem);   /* hero H1 */
+  --fs-display-lg: clamp(1.9rem, 1.55rem + 1.8vw, 3.1rem);   /* section H2 */
+  --fs-display-md: clamp(1.3rem, 1.18rem + 0.6vw, 1.6rem);   /* card/H3 */
+  --fs-body-lg: 1.15rem;
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+  --fs-eyebrow: 0.78rem;
+
+  --lh-display: 0.98;
+  --lh-heading: 1.15;
+  --lh-body: 1.65;
+
+  /* --- Spacing scale (4px base) --- */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-6: 1.5rem;
+  --sp-8: 2rem;
+  --sp-12: 3rem;
+  --sp-16: 4rem;
+  --sp-24: 6rem;
+  --sp-32: 8rem;
+
+  /* --- Layout --- */
+  --container-max: 1240px;
+
+  /* --- Motion --- */
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast: 150ms;
+  --dur-base: 250ms;
+  --dur-slow: 500ms;
+  --dur-reveal: 700ms;
+}
